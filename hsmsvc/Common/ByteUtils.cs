@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace hsmsvc
+namespace HSMSvc.Common
 {
     /// <summary>
     /// 字节数组操作扩展类

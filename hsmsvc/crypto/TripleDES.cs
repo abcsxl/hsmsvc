@@ -1,9 +1,10 @@
-﻿using System;
+﻿using HSMSvc.Common;
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace hsmsvc.crypto
+namespace HSMSvc.Crypto
 {
     /// <summary>
     /// TripleDES算法加解密类

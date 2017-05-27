@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace hsmsvc.crypto
+namespace HSMSvc.Crypto
 {
     /// <summary>
     /// 国密SM3算法加解密类

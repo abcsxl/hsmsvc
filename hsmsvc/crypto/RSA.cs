@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace hsmsvc.crypto
+namespace HSMSvc.Crypto
 {
     /// <summary>
     /// RSA算法加解密类

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace hsmsvc
+namespace HSMSvc
 {
     class Program
     {

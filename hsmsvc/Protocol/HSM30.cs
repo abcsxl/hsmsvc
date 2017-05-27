@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace hsmsvc.Protocol
+namespace HSMSvc.Protocol
 {
     /// <summary>
     /// 成都30所加密机协议（卫士通）

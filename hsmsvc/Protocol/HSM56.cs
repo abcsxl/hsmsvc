@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace hsmsvc.Protocol
+namespace HSMSvc.Protocol
 {
     /// <summary>
     /// 无锡总参56所加密机协议（江南系）

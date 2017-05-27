@@ -5,6 +5,9 @@ using System.Text;
 
 namespace hsmsvc.crypto
 {
+    /// <summary>
+    /// TripleDES算法加解密类
+    /// </summary>
     static class TripleDES
     {
         public static string TripleDES_ECB_Encrypt(string key, string iv, string data)

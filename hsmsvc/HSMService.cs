@@ -8,6 +8,9 @@ namespace hsmsvc
 {
     public class HSMService
     {
+        /// <summary>
+        /// 报文最大字节数
+        /// </summary>
         private static int BUFF_MAX_SIZE = 256;
 
         private IPAddress ipAddress;
@@ -57,10 +60,8 @@ namespace hsmsvc
 
         private async Task Process(TcpClient tcpClient)
         {
- //           string clientEndPoint =
- //tcpClient.Client.RemoteEndPoint.ToString();
- //           Console.WriteLine("Received connection request from "
- //           + clientEndPoint);
+ //           string clientEndPoint = tcpClient.Client.RemoteEndPoint.ToString();
+ //           Console.WriteLine("Received connection request from " + clientEndPoint);
  //           try
  //           {
  //               NetworkStream networkStream = tcpClient.GetStream();
@@ -124,20 +125,6 @@ namespace hsmsvc
         }
         private static byte[] Process(byte[] request)
         {
-            //string[] pairs = request.Split('&');
-            //string methodName = pairs[0].Split('=')[1];
-            //string valueString = pairs[1].Split('=')[1];
-            //string[] values = valueString.Split(' ');
-            //double[] vals = new double[values.Length];
-            //for (int i = 0; i < values.Length; ++i)
-            //    vals[i] = double.Parse(values[i]);
-            //string response = "";
-            //if (methodName == "average") response += Average(vals);
-            //else if (methodName == "minimum") response += Minimum(vals);
-            //else response += "BAD methodName: " + methodName;
-            //int delay = ((int)vals[0]) * 1000; // Dummy delay
-            //System.Threading.Thread.Sleep(delay);
-
             int responselen = request.Length;
             byte[] response = new byte[responselen];
 

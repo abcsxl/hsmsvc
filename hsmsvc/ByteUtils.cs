@@ -5,6 +5,9 @@ using System.Text;
 
 namespace hsmsvc
 {
+    /// <summary>
+    /// 字节数组操作扩展类
+    /// </summary>
     static class ByteUtils
     {
         internal static byte[] AsciiBytes(string s)

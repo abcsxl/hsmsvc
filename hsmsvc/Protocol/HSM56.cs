@@ -9,5 +9,6 @@ namespace HSMSvc.Protocol
     /// </summary>
     class HSM56
     {
+
     }
 }

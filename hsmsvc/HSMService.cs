@@ -101,15 +101,22 @@ namespace HSMSvc
                     await networkStream.FlushAsync();
 
                     byte[] buff = new byte[BUFF_MAX_SIZE];
-                    int requestlen = await networkStream.ReadAsync(buff, 0, buff.Length);
+                    int requestlen = await networkStream.ReadAsync(buff, 0, 2);
                     if (requestlen > 0)
-                    {   
-                        Console.WriteLine($"Received service request: {buff.ByteArrayToHex(requestlen)}");
+                    {
+                        int buflen = buff[0] * 0x1000 + buff[1];
+                        requestlen = await networkStream.ReadAsync(buff, 2, buflen);
+                        if (requestlen > 0)
+                        {
+                            Console.WriteLine($"Received service request: {buff.ByteArrayToHex(requestlen+2)}");
 
-                        byte[] response = Process(buff.SubBytes(0,requestlen));
+                        byte[] response = Process(buff.SubBytes(0,requestlen+2));
                         Console.WriteLine($"Computed response is: {response.ByteArrayToHex()}");
 
                         await networkStream.WriteAsync(response, 0, response.Length);
+                        }
+                        else
+                            break; // Client closed connection
                     }
                     else
                         break; // Client closed connection

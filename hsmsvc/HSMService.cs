@@ -13,31 +13,20 @@ namespace HSMSvc
         /// </summary>
         private static int BUFF_MAX_SIZE = 256;
 
-        private IPAddress ipAddress;
+        private string ip;
         private int port;
-        public HSMService(int port)
+        public HSMService(string ip, int port)
         {
-            this.port = port;
-            //string hostName = Dns.GetHostName();
-            //IPHostEntry ipHostInfo = Dns.GetHostEntry(hostName);
-            //this.ipAddress = null;
-            //for (int i = 0; i < ipHostInfo.AddressList.Length; ++i)
-            //{
-            //    if (ipHostInfo.AddressList[i].AddressFamily ==
-            //    AddressFamily.InterNetwork)
-            //    {
-            //        this.ipAddress = ipHostInfo.AddressList[i];
-            //        break;
-            //    }
-            //}
-            this.ipAddress = IPAddress.Parse("127.0.0.1");
-
-            if (this.ipAddress == null)
-                throw new Exception("No IPv4 address for server");
+            this.ip = ip;
+            this.port = port;           
         }
         public async void Run()
         {
-            TcpListener listener = new TcpListener(this.ipAddress, this.port);
+            IPAddress ipAddress = IPAddress.Parse(ip);
+            if (ipAddress == null)
+                throw new Exception("No IPv4 address for server");
+
+            TcpListener listener = new TcpListener(ipAddress, this.port);
             listener.Start();
             Console.Write("Array Min and Avg service is now running");
 
